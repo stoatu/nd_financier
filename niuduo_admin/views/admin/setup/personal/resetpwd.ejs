@@ -1,0 +1,31 @@
+<!--重置密码-->
+<div class="msg_box_content">
+
+    <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"> </div>
+
+    <!--密码重置-->
+        <div class="layer_title white">密码重置</div>
+        <form class="form-horizontal" error_type="right" action="/resetAdminPassword" role="form" name="reset_form" id="reset_form">
+            <!-- 信息总揽 -->
+            <div class="form_view">
+                <input type="hidden"  name="user_id" id="user_id" >
+                <table  >
+                    <tr>
+                        <td colspan="2" class="td_content_center font_size_18">您确定要重置密码为“123456”吗？
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="td_content_center" >
+                            <p class="form-error-bottom display_none"></p>
+                            <button type="button" class="btn_save width2">保存</button><button type="button" class="btn_cancel width2 margin-left20">取消</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </form>
+</div>
+<%- include ../../popbox.ejs %>
+
+<script src="/javascripts/admin/setup/personal/resetpwd.js"  ></script>

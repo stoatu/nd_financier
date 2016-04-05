@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/stylesheets/member/account/password.css"/>
+
+<form class="account_form" method="post" action="https://v0.api.upyun.com/<%= common_info.avatar_upyun.bucket %>" target="avatar_iframe" error_type="bottom" id="nick_form" name="nick_form" enctype="multipart/form-data">
+    <input type="hidden" name="policy" value="<%= common_info.avatar_upyun.policy %>">
+    <input type="hidden" name="signature" value="<%= common_info.avatar_upyun.sign %>">
+    <label for=""><img src="/images/member/images/little_03.png" alt=""/>昵称:</label><input type="text" name="nickname" data-verify="empty"/><br/>
+    <label for=""><img src="/images/member/images/little_03.png" alt=""/>头像上传:</label>
+        <%if(typeof(cookie_info.portrait)=="undefined" || cookie_info.portrait=="undefined" || cookie_info.portrait==null || cookie_info.portrait=="null" || cookie_info.portrait==""){%>
+        <img id="avatar_img" src="/images/member/images/base_15.png" alt=""/>
+        <%}else{%>
+        <img id="avatar_img" src="<%=common_info.avatar_upyun.prefix_upyun+cookie_info.portrait %>">
+        <%}%><br/>
+        <input id="file_avatar" type="file"  name="file" style="display: none"/>
+        <button id="myhead" type="button">上传头像</button>
+
+    <button type="button" id="submit_btn">确认保存</button><div class="input_error form-error-bottom display_none" id="input_error"></div>
+</form>
+
+<script type="application/javascript">
+    var sign_upyun = '<%= common_info.avatar_upyun.sign %>';
+    var bucket_upyun = '<%= common_info.avatar_upyun.bucket %>';
+    var policy_upyun = '<%= common_info.avatar_upyun.policy %>';
+    var prefix_upyun_avatar = '<%= common_info.avatar_upyun.prefix_upyun %>';
+</script>
+<iframe  id="avatar_iframe" name="avatar_iframe" style="display: none"></iframe>
+<script src="/javascripts/member/account/myhead.js"></script>

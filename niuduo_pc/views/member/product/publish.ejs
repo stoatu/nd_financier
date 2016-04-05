@@ -1,0 +1,143 @@
+<%- include ../basemodule %>
+
+<script src="/javascripts/member/product/publish.js"></script>
+<script src="/javascripts/common/My97DatePicker/WdatePicker.js"></script>
+<script src="/javascripts/common/upload/upload.js"  ></script>
+<link rel="stylesheet" href="/stylesheets/member/product/publish.css">
+<link rel="stylesheet" href="/kindeditor-4.1.10/themes/default/default.css" />
+<script charset="utf-8" src="/kindeditor-4.1.10/kindeditor-min.js"></script>
+<script charset="utf-8" src="/kindeditor-4.1.10/kindeditor.js"></script>
+<script charset="utf-8" src="/kindeditor-4.1.10/lang/zh_CN.js"></script>
+<script>
+
+    var editor;
+    KindEditor.ready(function(K) {
+        editor = K.create('textarea[name="product_description"]', {
+            allowFileManager : false,
+            afterUpload : function(url) {
+                alert(url);
+            }
+        });
+        K('input[name=getHtml]').click(function(e) {
+            alert(editor.html());
+        });
+        K('input[name=isEmpty]').click(function(e) {
+            alert(editor.isEmpty());
+        });
+        K('input[name=getText]').click(function(e) {
+            alert(editor.text());
+        });
+        K('input[name=selectedHtml]').click(function(e) {
+            alert(editor.selectedHtml());
+        });
+        K('input[name=setHtml]').click(function(e) {
+            editor.html('<h3>Hello KindEditor</h3>');
+        });
+        K('input[name=setText]').click(function(e) {
+            editor.text('<h3>Hello KindEditor</h3>');
+        });
+        K('input[name=insertHtml]').click(function(e) {
+            editor.insertHtml('<strong>插入HTML</strong>');
+        });
+        K('input[name=appendHtml]').click(function(e) {
+            editor.appendHtml('<strong>添加HTML</strong>');
+        });
+        K('input[name=clear]').click(function(e) {
+            editor.html('');
+        });
+    });
+</script>
+  <div class="tab_title">
+      <span class="active"><a href="/member/product/manage">产品管理 </a></span>
+      <span><a href="/member/product/publish">产品发布 </a></span>
+  </div>
+  <div class="publish_content">
+      <iframe id="pic_iframe" name="pic_iframe"  class="display_none"></iframe>
+      <form target="pic_iframe" class="content_form" action="/member/product/add" method="post" name="add_form" enctype="multipart/form-data" role="form" error_type="bottom">
+          <input type="hidden" id="policy" name="policy" value="">
+          <input type="hidden" id="signature" name="signature" value="">
+          <input type="hidden" id="timept" name="timept" value="">
+          <div>
+               <label><img src="/images/member/images/little_03.png" alt=""/>产品类型：</label>
+               <select id="product_type" name="product_type"> </select>
+          </div>
+          <div>
+              <label><img src="/images/member/images/little_03.png" alt=""/>产品名称：</label>
+              <input id="product_name" name="product_name"  type="text" placeholder="请输入产品名称" data-verify="empty" />
+          </div>
+          <div>
+              <label><img src="/images/member/images/little_03.png" alt=""/>产品图像：</label>
+              <div class="auth_up">
+                  <div class="photo_up"><img show_file="true" class="portrait_pic" show_file_img="true" id="portrait_pic" name="portrait_pic" src=""></div>
+                  <div class="up_bg"><div class="upload">点击上传</div><input type="file" data-verify="file" name="file_0" class="font-file-btn" id="portrait"  target_id="portrait_pic" param_name="portrait_pic" param_value=" "  value="" ></div>
+              </div>
+          </div>
+          <div>
+              <label class="plaintexts"><img src="/images/member/images/little_03.png" alt=""/>产品描述：</label>
+
+              <textarea id="product_description" name="product_description" type="text" placeholder="请输入产品介绍" data-verify="empty" ></textarea>
+          </div>
+          <div>
+              <label><img src="/images/member/images/little_03.png" alt=""/>募集开始时间：</label>
+              <input readonly='readonly' type='text' class='Wdate' id='start_time' name="start_time" onFocus='start_time_click()' data-verify="empty"  />
+          </div>
+          <div id="cycle" class="display">
+              <label><img src="/images/member/images/little_03.png" alt=""/>存续期限：</label>
+              <select id="cycle" name="cycle">
+                      <option value="30">1个月</option>
+                      <option value="90">3个月</option>
+                      <option value="180">6个月</option>
+                      <option value="360">1年</option>
+                      <option value="1080">3年</option>
+              </select>
+              <span>（* 私募股权、信托资管必填项）</span>
+          </div>
+          <div id="stock_private_product" class="display">
+              <div>
+                  <label><img src="/images/member/images/little_03.png" alt=""/>募集目标：</label>
+                  <input class="cash_width" id="raise_target" name="raise_target" type="text" placeholder="请输入募集金额"  data-verify="empty"/>万元<span>（* 私募股权、信托资管必填项）</span>
+              </div>
+              <div>
+                  <label><img src="/images/member/images/little_03.png" alt=""/>最小起投：</label>
+                  <input class="cash_width" id="min_invest" name="min_invest" type="text" placeholder="请输入最小起投金额"  data-verify="empty"/>万元<span>（* 私募股权、信托资管必填项）</span>
+              </div>
+          </div>
+          <div id="entrust_product" class="hidden">
+              <div>
+                  <label><img src="/images/member/images/little_03.png" alt=""/>预期年化：</label>
+                  <input id="year_yield" name="year_yield" type="text" placeholder="请输入预期年化收益率" data-verify="" />%<span class="year_yield_span">（* 信托资管必填项）</span>
+              </div>
+          </div>
+          <div>
+              <label><img src="/images/member/images/little_03.png" alt=""/>关键字：</label>
+              <input id="key_word" name="key_word" type="text" placeholder="请输入关键字"   />
+          </div>
+          <!--<div>
+              <label><img src="/images/member/images/little_03.png" alt=""/>选择模板：</label>
+              <select id="template" name="" class="template">
+                  <option value="template_1">模板一</option>
+                  <option value="template_2">模板二</option>
+                  <option value="template_3">模板三</option>
+              </select>
+              <div id="template_img" class="template_img"><img src="/images/member/images/40868.jpg" alt=""/></div>
+              <div id="template_img_large" class="template_img_large hidden"><div class="bg_op"></div><img src="/images/member/images/40868.jpg" alt=""/></div>
+          </div>-->
+          <p class="form-error-bottom display_none"></p>
+          <div>
+              <button type="button" id="view_btn" value=""> 预览</button>
+              <button class="no_margin" type="button" id="submit_btn" value=""> 提交</button>
+          </div>
+
+      </form>
+  </div>
+
+</div>
+</div>
+</div>
+<%- include ../../share.ejs %>
+<script>
+    var sign_upyun1 = '<%= upyun_pic_1.sign %>';
+    var policy_upyun1 = '<%= upyun_pic_1.policy %>';
+    var picpath1 = '<%= upyun_pic_1.picpath %>';
+    var prefix_upyun = '<%= upyun_pic_1.prefix_upyun %>';
+</script>

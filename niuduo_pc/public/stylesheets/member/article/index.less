@@ -1,0 +1,57 @@
+.table_list {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    color: #535353;
+    tr { border-bottom: 1px solid #dedede;}
+    thead {
+        tr {
+            background: #f1f1f1;
+            border-bottom: none;
+            color: #535353;
+        }
+    }
+    tbody {
+        tr td:first-child {
+            text-align: left;
+            input { margin: 0 10px;}
+        }
+        .issue {
+            position: relative;
+            img {
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+            }
+            p {
+                position: absolute;
+                left: 50%;
+                top: 38px;
+                z-index: 2;
+                font-size: 12px;
+                line-height: 16px;
+                color: #7f7f7f;
+                max-width: 100%;
+                border: 1px solid #dedede;
+                padding: 5px;
+                background: #fff;
+                display: none;
+            }
+        }
+    }
+    button {
+        display: inline-block;
+        padding: 0 10px;
+        line-height: 23px;
+        color: #fff;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        background: #f84e4e;
+        cursor: pointer;
+    }
+    .up { color: #ff3131;}
+    .down { color: #04bf30;}
+}

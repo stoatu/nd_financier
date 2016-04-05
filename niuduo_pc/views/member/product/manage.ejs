@@ -1,0 +1,58 @@
+<%- include ../basemodule %>
+
+<link rel="stylesheet" href="/stylesheets/member/product/manage.css"/>
+<script src="/javascripts/member/product/manage.js"></script>
+<script src="/javascripts/member/product/edit.js"></script>
+<script src="/javascripts/common/My97DatePicker/WdatePicker.js"></script>
+
+<div class="tab_title">
+    <span><a href="/member/product/manage">产品管理 </a></span>
+    <span class="active"><a href="/member/product/publish">产品发布 </a></span>
+    <div class="query_table">
+        <label>产品名称：</label> <input id="product_name" name="product_name" type="text" placeholder="产品名称" />
+        <label>产品类型：</label>
+        <select id="type_id" name="type_id">
+            <option value="">全部</option>
+            <option value="1">私募股权</option>
+            <option value="2">阳光私募</option>
+            <option value="3">信托资管</option>
+        </select>
+        <button type="button" id="search" name="search">查询</button>
+        <button type="button" id="share" name="share">分享</button>
+    </div>
+</div>
+
+<div  class="table_list_box" id="table_list">
+    <table class="table_list" id="table" > </table>
+    <!-- 分页框 -->
+    <div class="page_control" id="page"><ul></ul></div>
+</div>
+
+
+<!--<div class="refresh_page" id="refresh_page">
+    <div class="page_bg"></div>
+    <div class="page_box">
+        <h4>更新内容</h4>
+        <form action="/member/product/edit" method="post" name="product_edit" id="product_edit" role="form">
+            <div>
+                <label>更新日期：</label>
+                <input readonly='readonly' type='text' class='Wdate' id='edit_date' name="edit_date" onFocus='start_time_click()' data-verify="empty"  />
+            </div>
+            <div>
+                <label>最新净值：</label>
+                <input id="last_net_value" name="last_net_value" type="text" placeholder="请输入最新净值" data-verify="empty" />
+            </div>
+            <div>
+                <label>累计收益：</label>
+                <input id="all_profit" name="all_profit" type="text" placeholder="请输入累计收益" data-verify="empty" /><span >%</span>
+            </div>
+            <button id="edit" name="" type="button">更新</button>
+            <button type="button">取消</button>
+        </form>
+    </div>
+</div>-->
+
+
+</div>
+</div>
+</div>

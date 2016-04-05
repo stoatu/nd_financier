@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script src="../../jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <p>二维码信息：201211070014</p>
+    <div id="qrcodeTable"></div>
+    <p>二维码信息：gerrard</p>
+    <div id="qrcodeCanvas"></div>
+    <script>
+        jQuery('#qrcodeTable').qrcode({
+            render  : "table",
+            text    : "201211070014"    //根据此串生成第一个二维码
+        });
+        jQuery('#qrcodeCanvas').qrcode({
+            text    : "https://www.baidu.com"     //根据此串生成第二个二维码
+        });
+    </script>
+</body>
+</html>

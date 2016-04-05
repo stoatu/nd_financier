@@ -1,0 +1,38 @@
+<link href="/stylesheets/admin/main/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="/javascripts/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //顶部导航切换
+        $(".nav li a").click(function(){
+            $(".nav li a.selected").removeClass("selected")
+            $(this).addClass("selected");
+        })
+    })
+</script>
+<body style="background:url('/images/admin/main/images/topbg.gif') repeat-x;">
+    <div class="topleft">
+        <a href="/admin/main" target="_parent"><img src="/images/admin/main/images/logo.png" title="系统首页" /></a>
+    </div>
+    <ul class="nav">
+        <li><a href="/admin/main/left?auth_id=300&auth_name=用户管理" target="leftFrame" class="selected"><img src="/images/admin/main/images/icon12.png" title="用户管理" /><h2>用户管理</h2></a></li>
+        <li><a href="/admin/main/left?auth_id=600&auth_name=产品管理" target="leftFrame"><img src="/images/admin/main/images/icon13.png" title="产品管理" /><h2>产品管理</h2></a></li>
+        <li><a href="/admin/main/left?auth_id=900&auth_name=文章管理"  target="leftFrame"><img src="/images/admin/main/images/icon17.png" title="文章管理" /><h2>文章管理</h2></a></li>
+        <li><a href="/admin/main/left?auth_id=230&auth_name=日常维护"  target="leftFrame"><img src="/images/admin/main/images/icon04.png" title="日常维护" /><h2>日常维护</h2></a></li>
+        <li><a href="/admin/main/left?auth_id=10070&auth_name=系统设置"  target="leftFrame"><img src="/images/admin/main/images/icon06.png" title="系统设置" /><h2>系统设置</h2></a></li>
+        <!--<li><a href="computer.html" target="leftFrame"><img src="/images/admin/main/images/icon05.png" title="统计分析" /><h2>统计分析</h2></a></li>-->
+    </ul>
+
+    <div class="topright">
+        <ul>
+            <li><span><img src="/images/admin/main/images/help.png" title="帮助"  class="helpimg"/></span><a href="#">帮助</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="/adminlogout" target="_parent">退出</a></li>
+            <li><a href="/admin/setup/role?parentid=10070" target="rightFrame">个人设置</a></li>
+        </ul>
+        <div class="user">
+            <span><%= cookie_info.adminnickname %></span>
+           <!-- <i>消息</i>
+            <b>5</b>-->
+        </div>
+    </div>
+</body>

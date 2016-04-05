@@ -1,0 +1,123 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="/stylesheets/member/product/detail.css"/>
+    <script src="/javascripts/member/product/detail.js"></script>
+</head>
+<body>
+<script>
+    var type_id='<%=info.type_id%>';
+</script>
+    <ul class="product_detail">
+        <li>
+            <h4>
+                <span>基本资料</span>
+                <div class="share_btn">
+                    <i>点击分享：</i>
+                    <div class="bdsharebuttonbox" data-tag="share_1">
+                        <a class="bds_mshare" data-cmd="mshare"></a>
+                        <a class="bds_qzone" data-cmd="qzone" href="#"></a>
+                        <a class="bds_tsina" data-cmd="tsina"></a>
+                        <a class="bds_baidu" data-cmd="baidu"></a>
+                        <a class="bds_renren" data-cmd="renren"></a>
+                        <a class="bds_tqq" data-cmd="tqq"></a>
+                        <a class="bds_more" data-cmd="more">更多</a>
+                        <a class="bds_count" data-cmd="count"></a>
+                    </div>
+                </div>
+            </h4>
+            <div class="detail_content detail_content_list">
+                <script>
+                    var portrait='<%=info.portrait%>';
+                    if(portrait==''||portrait=='null'||portrait=='undefined'){
+                        portrait='/images/member/images/40868.jpg';
+                    }
+                    document.write("<img src='"+portrait+"' alt='' class='con_img' />");
+                </script>
+                <h5><script>document.write('<%=info.product_name%>');</script></h5>
+                <dl>
+                    <dd><span>产品类型：</span><script>document.write('<%=info.type_name%>');</script></dd>
+                    <dd><span>关键字：</span><script>document.write('<%=info.key_word%>');</script></dd>
+                    <dd><span>募集开始时间：</span>
+                        <script>
+                            var start_time='<%=info.start_time%>';
+                            if(start_time==''|| start_time=='null'||start_time=='undefined'){
+                                document.write('-');
+                            }else{
+                                document.write(date_format('<%=info.start_time%>','yyyy-MM-dd'));
+                            }
+
+                        </script>
+                    </dd>
+                    <dd><span>存续期限：</span>
+                        <script>
+                            if(type_id=='1'){
+                                document.write('<%=info.stock_cycle%>'+'天');
+                            }else if(type_id=='3'){
+                                document.write('<%=info.entrust_cycle%>'+'天');
+                            }else{
+                                document.write('-');
+                            }
+                        </script>
+                    </dd>
+                    <dd><span>募集目标：</span>
+                        <script>
+                           if(type_id=='1'){
+                               document.write('<%=info.raise_target%>'+'万元');
+                           }else if(type_id=='3'){
+                               document.write('<%=info.all_amount%>'+'万元');
+                           }else{
+                               document.write('-');
+                           }
+                        </script>
+                    </dd>
+                    <dd><span>最小起投：</span>
+                        <script>
+                            if(type_id=='1'){
+                                document.write('<%=info.min_invest%>'+'万元');
+                            }else if(type_id=='3'){
+                                document.write('<%=info.min_buy%>'+'万元');
+                            }else{
+                                document.write('-');
+                            }
+                        </script>
+                    </dd>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <h4>产品描述</h4>
+            <div class="detail_content">
+                 <%-info.description%>
+            </div>
+        </li>
+    </ul>
+<script>
+    window._bd_share_config = {
+        common : {
+            bdText : '<%=info.product_name%>',
+            bdDesc : '',
+            bdUrl : '自定义分享url地址',
+            bdPic : portrait
+        },
+        share : [{
+            "bdSize" : 16
+        }],
+        slide : [{
+            bdImg : 0,
+            bdPos : "right",
+            bdTop : 100
+        }],
+        image : [{
+            viewType : 'list',
+            viewPos : 'top',
+            viewColor : 'black',
+            viewSize : '16',
+            viewList : ['qzone','tsina','huaban','tqq','renren']
+        }],
+        selectShare : [{
+            "bdselectMiniList" : ['qzone','tqq','kaixin001','bdxc','tqf']
+        }]
+    }
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+</body>

@@ -1,0 +1,77 @@
+
+/* ����ʾ */
+
+.form-error-bottom {
+
+    background: #FFEBEC;
+    border: 1px solid #FFBDBF;
+    color: #E6393D;
+    line-height: 32px;
+    padding: 0 10px;
+    text-align: center;
+    display: inline-block;
+    text-indent: 10px;
+    font-size: 12px;
+}
+
+
+.display_none {
+    display: none;
+}
+
+form .error_msg {
+
+    /* background: #FFEBEC; */
+    border: 0px solid #FFBDBF;
+    color: #E6393D;
+    line-height: 22px;
+    padding: 5px 0 5px 3px;
+    width: 200px;
+    text-indent: 10px;
+    font-size: 14px;
+}
+
+form .error_border {
+
+    border: 1px solid #E6393D;
+    border-color: #E6393D;
+}
+
+
+form .btn-resendCaptcha {
+    background-color: #cc3300;
+    border: 0px;
+    width: 93px;
+    margin-left: 28px;
+    height: 32px;
+    border-radius: 3px;
+    color: #ffffff;
+    line-height: 32px;
+}
+
+
+form .btn-new-resendCaptcha {
+    background-color: #cc3300;
+    border: 0px;
+    width: 93px;
+    margin-left: 28px;
+    height: 32px;
+    border-radius: 3px;
+    color: #ffffff;
+    line-height: 32px;
+}
+
+
+
+form .btn-resendCaptcha_disable {
+
+    background-color: #e4e4e4;
+    color: #787878;
+}
+
+form .btn-new-resendCaptcha_disable {
+
+    background-color: #e4e4e4;
+    color: #787878;
+}
+.hidden { display: none;}

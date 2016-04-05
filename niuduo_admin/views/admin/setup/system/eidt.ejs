@@ -1,0 +1,38 @@
+<div class="msg_box_content">
+    <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"> </div>
+    <!--修改密码-->
+    <div class="layer_title">修改配置</div>
+    <form class="form-horizontal" error_type="right" action="/editConfiguration" role="form" name="eidt_form" id="eidt_form">
+        <!-- 信息总揽 -->
+        <div class="form_view">
+            <table  >
+                <tr>
+                    <td class="td_title content_word" >配置名称: </td>
+                    <td class="td_content">
+                        <input id="configKey"  type="text" data-verify="empty" class="form-control" name="configKey" id="configKey">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_title content_word" >值: </td>
+                    <td class="td_content">
+                        <input type="text" data-verify="empty" class="form-control" name="configValue" id="configValue" >
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_title content_word" >说明:</td>
+                    <td class="td_content">
+                        <input type="text" data-verify="empty" class="form-control" name="etc" id="etc" >
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="td_content_center" >
+                        <p class="form-error-bottom display_none"></p>
+                        <button type="button"  class="btn_save width2">保存</button><button type="button" class="btn_cancel width2 margin-left20">取消</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<%- include ../../popbox.ejs %>
+<script src="/javascripts/admin/setup/system/eidt.js"  ></script>

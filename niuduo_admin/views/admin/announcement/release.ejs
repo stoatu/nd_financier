@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="/kindeditor-4.1.10/themes/default/default.css" />
+<script charset="utf-8" src="/kindeditor-4.1.10/kindeditor-min.js"></script>
+<script charset="utf-8" src="/kindeditor-4.1.10/kindeditor.js"></script>
+<script charset="utf-8" src="/kindeditor-4.1.10/lang/zh_CN.js"></script>
+<script>
+    var editor;
+    KindEditor.ready(function(K) {
+        editor = K.create('textarea[name="content"]', {
+            allowFileManager : true
+        });
+        K('input[name=getHtml]').click(function(e) {
+            alert(editor.html());
+        });
+        K('input[name=isEmpty]').click(function(e) {
+            alert(editor.isEmpty());
+        });
+        K('input[name=getText]').click(function(e) {
+            alert(editor.text());
+        });
+        K('input[name=selectedHtml]').click(function(e) {
+            alert(editor.selectedHtml());
+        });
+        K('input[name=setHtml]').click(function(e) {
+            editor.html('<h3>Hello KindEditor</h3>');
+        });
+        K('input[name=setText]').click(function(e) {
+            editor.text('<h3>Hello KindEditor</h3>');
+        });
+        K('input[name=insertHtml]').click(function(e) {
+            editor.insertHtml('<strong>插入HTML</strong>');
+        });
+        K('input[name=appendHtml]').click(function(e) {
+            editor.appendHtml('<strong>添加HTML</strong>');
+        });
+        K('input[name=clear]').click(function(e) {
+            editor.html('');
+        });
+    });
+</script>
+<div class="msg_box_content">
+    <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"> </div>
+    <!--发布公告-->
+    <div class="layer_title">发布公告</div>
+    <form method="post" class="form-horizontal" target="pic_iframe" error_type="right" action="/releaseAnnouncement" role="form" name="add_form" id="add_form" enctype="multipart/form-data">
+        <!-- 信息总揽 -->
+        <div class="form_view">
+            <input type="hidden"name="infoAnnouncementId" id="infoAnnouncementId" >
+
+            <input type="hidden"name="top_flag" id="top_flag" >
+            <input type="hidden" id="policy" name="policy" value="">
+            <input type="hidden" id="signature" name="signature" value="">
+            <table>
+
+                <tr>
+                    <td class="td_title content_word" >标题:</td>
+                    <td class="td_content">
+                        <input type="text" data-verify="empty" encode="1" class="form-control" name="title" id="title"  data-rules="{required:true}" size="75">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_title content_word" >摘要:</td>
+                    <td class="td_content">
+                        <textarea name='introduction' data-verify="empty" id='introduction' style='width:80%;height:46px;' form_name="introduction"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_title content_word" >缩略图:</td>
+                    <td class="td_content">
+                        <table width="100%">
+                            <tr>
+                                <td width="8%">
+                                    <img show_file="true" show_file_img="true" id="positive_file_pic" name="positive_file_pic" src="" style="width: 40px; height:40px">
+                                </td>
+                                <td>
+                                    <input type="file" data-verify="file" name="file_0" class="file" target_id="positive_file_pic" param_name="diagram_url" param_value="">
+                                    <input type="hidden"  encode="1" class="form-control" name="thumbnail" id="thumbnail" size="20">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_title content_word" >内容:</td>
+                    <td class="td_content">
+                        <textarea name='content' data-verify="empty" id='content' style='width:88%;height:156px;' form_name="content"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_title content_word" >上架设置:</td>
+                    <td class="td_content">
+                        <select id="passed" name="passed"  class="form-control td_short" form_name="passed">
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="td_content_center" >
+                        <p class="form-error-bottom display_none"></p>
+                        <button type="button" class="btn_submits margin-left20 width2">提交</button><button type="button" class="btn_save margin-left20 width2">提交并置顶</button><button type="button" class="btn_cancel margin-left20 width2">取消</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+
+<iframe id="pic_iframe" name="pic_iframe" style="display: none;"></iframe>
+
+<%- include ../popbox.ejs %>
+<script src="/javascripts/admin/daity/announcement/release.js"  ></script>

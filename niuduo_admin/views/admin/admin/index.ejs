@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta property="wb:webmaster" content="58d15a36abe72efc" />
+    <title><%= title %></title>
+    <!--引入样式-->
+    <link rel="stylesheet" href="/stylesheets/admin/admincommon.css" />
+    <link rel="stylesheet" href="/stylesheets/admin/index.css" />
+    <link rel="stylesheet" href="/stylesheets/admin/admin/login.css" />
+    <script src="/javascripts/jquery-1.11.3.min.js"></script>
+    <link href="http://g.alicdn.com/bui/bui/1.1.8/css/bs3/dpl.css" rel="stylesheet">
+    <link href="http://g.alicdn.com/bui/bui/1.1.8/css/bs3/bui.css" rel="stylesheet">
+    <script src="javascripts/common/form_check.js"></script>
+    <script src="javascripts/admin/admin/login.js"></script>
+
+</head>
+
+
+<body>
+<!--背景条 -->
+<div class="login_background"></div>
+
+<div class="member-body">
+
+
+
+
+    <div class="login_form text-center">
+        <div class="login_title"><img class="login_title_img"  src="<%= common_info.img_prefix %>/images/admin/login/title.jpg"></div>
+
+
+
+
+        <div class="demo-content">
+
+            <div class="demo-content-top" >
+                <div class="demo-content-title"><img class="login_title_img"  src="<%= common_info.img_prefix %>/images/admin/login/logo_title.jpg"></div>
+            </div>
+            <div class="divider"></div>
+            <form  error_type="bottom" action="/adminLogin1" role="form" id="login-form" name="login-form">
+            <table class="table_index">
+                <tr>
+                    <td class="right font_size20">帐号：</td>
+                    <td class="left"><input type="text" data-verify="empty" data-tip='{"text":"帐号","iconCls":"icon icon-user"}'  class="control-text input" name="loginname" id="loginname"></td>
+                </tr>
+                <tr>
+                    <td class="right font_size20">密码：</td>
+                    <td class="left"><input type="password" data-verify="empty password" data-tip='{"text":"密码","iconCls":"icon icon-user"}' class="control-text input" name="password" id="password"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="left"><p class="form-error-bottom display_none"></p>
+                        <button type="button" class="btnlogin">登录</button></td>
+                </tr>
+            </table>
+            </form>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

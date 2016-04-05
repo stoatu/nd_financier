@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="/stylesheets/member/basemodule.css"/>
+
+<!--顶部login-->
+<div class="member_top">
+    <div class="top_content">
+        <img src="/images/member/images/base_03.png" alt="logo"/>
+        <div class="top_nav">
+            <a href=""><h5 class="active" href="" style="background-position: 12px center;">产品商城库</h5></a>
+            <a href=""><h5 href="" style="background-position: -117px center;">产品商城库</h5></a>
+            <div class="nav_message">
+                <a href="" style="background-position: -271px center;"></a>
+                <a href="" style="background-position: -321px center;"></a>
+                <a href="" style="background-position: -371px center;"></a>
+                <a href="/logout" style="background-position: -421px center;"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--内容区-->
+<div class="member_content">
+    <!--导航-->
+    <div class="content_nav">
+        <div class="nav_user" id="nav_user_header">
+            <%if(typeof(cookie_info.portrait)=="undefined" || cookie_info.portrait=="undefined" || cookie_info.portrait==null || cookie_info.portrait=="null" || cookie_info.portrait==""){%>
+            <img id="avatar_img" src="/images/member/images/base_15.png" alt=""/>
+            <%}else{%>
+            <img id="avatar_img" src="<%=common_info.avatar_upyun.prefix_upyun+cookie_info.portrait %>">
+            <%}%>
+            <p>理财师：<span><%=cookie_info.login_name%></span></p>
+            <p>能力：<img src="/images/member/images/base_19.png" alt="star"/><img src="/images/member/images/base_19.png" alt="star"/></p>
+        </div>
+        <div class="nav_title" id="nav_title">
+            <a href="/member/account">基本资料</a>
+            <a href="/member/product/manage">产品管理</a>
+            <a href="/member/article/manage">文章管理</a>
+            <a href="">客户管理</a>
+            <a href="">分销管理</a>
+            <a href="">好友管理</a>
+            <a href="">微官网管理</a>
+            <a href="/member/share">分享管理</a>
+        </div>
+    </div>
+
+    <script>
+        $('#nav_title a').eq('<%=title_id%>').addClass('active');
+    </script>
+
+    <!--内容-->
+    <div class="content_main">
+        <div class="main_top">
+            <span><%=title%></span>
+            <!--<i>返回<img src="/images/member/images/base_11.png" alt="return"/></i>-->
+        </div>
+        <div class="main_content">

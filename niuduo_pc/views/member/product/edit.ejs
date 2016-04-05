@@ -1,0 +1,26 @@
+
+
+<script src="/javascripts/member/product/edit.js"></script>
+<script src="/javascripts/common/My97DatePicker/WdatePicker.js"></script>
+<div>
+    <form action="/member/product/edit" method="post" name="product_edit" id="product_edit" role="form">
+        <div>
+            <label>更新日期：</label>
+            <input readonly='readonly' type='text' class='Wdate' id='edit_date' name="edit_date" onFocus='start_time_click()' data-verify="empty"  />
+        </div>
+        <div>
+            <label>最新净值：</label>
+            <input id="last_net_value" name="last_net_value" type="text" placeholder="请输入最新净值" data-verify="empty" />
+        </div>
+        <div>
+            <label>累计收益：</label>
+            <input id="all_profit" name="all_profit" type="text" placeholder="请输入累计收益" data-verify="empty" /><span >%</span>
+        </div>
+        <button id="edit" name="" type="button">更新</button>
+    </form>
+</div>
+<script>
+    var product_id='<%=product_id%>';
+</script>
+
+

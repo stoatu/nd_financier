@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ul,ol,li { list-style: none;}
+img {
+    border: 0;
+    vertical-align: top;
+}
+body,input,select,button,textarea { font-family: "Microsoft Yahei";}
+i,b,em,cite { font-style: normal;}
+b { font-weight: normal;}
+a,a:link {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+h1,h2,h3,h4,h5,h6 { font-weight: normal;}
+a:active,a:hover { text-decoration: none;}
+a:focus { outline: none;}
+button,input,select { outline: none;}
+button { border: none;}
+input { text-indent: 0.5em;}
+input[type="button"] { cursor: pointer;}
+button { cursor: pointer;}
+html,body { font-size: 12px;}
+body { background: #fff;}

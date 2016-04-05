@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/stylesheets/admin/article/verify.css" />
+<div class="msg_box_content">
+    <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"> </div>
+    <div class="layer_title">文章审核</div>
+    <table class="form_view form_table">
+        <tr>
+            <td class="" >原因:
+            </td>
+            <td class="">
+                <textarea id="error_msg" name="error_msg" clos="" rows="5" class="" placeholder="审核失败或成功的原因说明...."> </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                 <button id="success" name="success">通过</button>
+                <button id="failed" name="failed">不通过</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<%- include ../popbox.ejs %>
+<script src="/javascripts/admin/article/verify.js"  ></script>
+

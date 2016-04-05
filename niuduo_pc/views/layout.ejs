@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title><% if(typeof(title)=='undefined'|| title == "" ||title==null)  { %>牛多理财<% } else {   %><%= title %> - 牛多理财 <%} %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" href="/stylesheets/common/grid.css"/>
+    <link rel="stylesheet" href="/stylesheets/common/common.css"/>
+    <link rel="stylesheet" href="/stylesheets/common/popup.css"/>
+    <link rel="stylesheet" href="/stylesheets/common/popbox.css"/>
+    <script src="/javascripts/jquery-1.11.3.min.js"></script>
+    <script src="/javascripts/bootstrap-3.3.5-dist/bootstrap.min.js"></script>
+    <script src="/javascripts/common/table_slide.js"></script>
+    <script src="/javascripts/common/form_check.js"></script>
+    <script src="/javascripts/common/format.js"></script>
+    <script src="/javascripts/common/grid.js"></script>
+    <script src="/javascripts/common/time_util.js"></script>
+    <script src="/javascripts/common/popup.js"></script>
+    <script src="/javascripts/common/pop_up_box.js"></script>
+    <script src="/javascripts/common/dialog.js"></script>
+    <script src="/javascripts/common/removeHTML.js"></script>
+</head>
+<body>
+
+    <%- body %>
+
+</body>
+<script>
+    var popup = new Popup();
+    popup.init();
+
+    var dialog = new Dialog();
+    dialog.Init();
+</script>
+</html>

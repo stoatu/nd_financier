@@ -1,0 +1,34 @@
+
+    <div class="msg_box_content">
+
+        <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"> </div>
+        <!--发布公告-->
+
+
+
+    <div class="layer_title">删除图片</div>
+    <form method="post" class="form-horizontal" error_type="bottom" action="/deleteAdminDiagram" role="form" name="add_form" id="deleteAdminDiagram" >
+        <!-- 信息总揽 -->
+        <div class="form_view">
+            <input type="hidden"  name="diagram_id" id="diagram_id">
+            <table  >
+                <tr>
+                    <td colspan="2" class="td_content_center">确定要删除吗？
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="td_content_center" >
+                        <p class="form-error-bottom display_none"></p>
+                        <button type="button" class="btn_save width2">提交</button><button type="button" class="btn_cancel margin-left20 width2">取消</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </form>
+    </div>
+
+    <%- include ../popbox.ejs %>
+
+    <script src="/javascripts/admin/daity/shuffling/deleteimg.js"  ></script>

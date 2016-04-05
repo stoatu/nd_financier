@@ -1,0 +1,103 @@
+.detail_list {
+  width: 1180px;
+  margin: 25px auto;
+}
+.detail_list .list_tit {
+  color: #3d9fe1;
+  line-height: 36px;
+}
+.detail_list .list_tit h5 {
+  font-size: 18px;
+  display: inline-block;
+}
+.detail_list .list_tit .share_btn {
+  display: inline-block;
+  float: right;
+  height: 36px;
+  overflow: hidden;
+}
+.detail_list .list_tit .share_btn i {
+  font-size: 1.33333333rem;
+  vertical-align: top;
+}
+.detail_list .list_tit .share_btn .bdsharebuttonbox {
+  display: inline-block;
+}
+.detail_list .list_tit .share_btn .bdsharebuttonbox a {
+  margin: 10px 6px 0 0px;
+}
+.detail_list ul {
+  border: 1px solid #e1e1e1;
+  border-top: 2px solid #3d9fe1;
+  padding: 0 30px;
+}
+.detail_list ul li {
+  padding: 35px 15px;
+  border-bottom: 1px solid #e1e1e1;
+  overflow: hidden;
+}
+.detail_list ul li .list_con {
+  padding: 15px;
+  float: left;
+  line-height: 20px;
+}
+.detail_list ul li img {
+  width: 100px;
+  height: 100px;
+}
+.detail_list ul li .list_info {
+  width: 400px;
+}
+.detail_list ul li .list_info h4 {
+  font-size: 16px;
+  color: #3d9fe1;
+  padding-bottom: 20px;
+}
+.detail_list ul li .list_info .descoration {
+  position: relative;
+  font-size: 14px;
+  line-height: 20px;
+}
+.detail_list ul li .list_info .descoration span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #999;
+}
+.detail_list ul li .list_info .descoration p {
+  text-indent: 5em;
+  color: #525252;
+}
+.detail_list ul li .list_data {
+  width: 228px;
+  border-left: 1px dashed #e1e1e1;
+  border-right: 1px dashed #e1e1e1;
+}
+.detail_list ul li .list_data p {
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 15px;
+}
+.detail_list ul li .list_data p span {
+  color: #999;
+}
+.detail_list ul li .list_data p i {
+  color: #525252;
+}
+.detail_list ul li .list_type {
+  width: 230px;
+}
+.detail_list ul li .list_type span {
+  font-size: 14px;
+  color: #999;
+}
+.detail_list ul li .list_type h5 {
+  color: #3d9fe1;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+}
+.detail_list ul li:last-child {
+  border-bottom: none;
+}

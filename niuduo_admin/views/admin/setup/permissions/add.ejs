@@ -1,0 +1,39 @@
+
+
+    <div class="msg_box_content">
+
+        <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"> </div>
+
+        <!--添加用户-->
+
+        <div class="layer_title">添加权限组</div>
+        <form class="form-horizontal" error_type="right" action="/addRole" role="form" name="eidt_form" id="eidt_form">
+            <!-- 信息总揽 -->
+            <div class="form_view">
+                <table  >
+                    <tr>
+                        <td class="td_title content_word" >权限组名称:
+                        </td>
+
+                        <td class="td_content">
+                            <input type="text" data-verify="empty" encode="1" class="form-control" name="role_name" id="role_name" placeholder="权限组名称" data-rules="{required:true}">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="td_content_center" >
+                            <p class="form-error-bottom display_none"></p>
+                            <button type="button" class="btn_save width1">保存</button><button type="button" class="btn_cancel width1 margin-left20">取消</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </form>
+    </div>
+    <%- include ../../popbox.ejs %>
+
+
+<script src="/javascripts/admin/setup/permissions/add.js"  ></script>
+
+

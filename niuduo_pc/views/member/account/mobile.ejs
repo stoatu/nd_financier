@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="/stylesheets/member/account/password.css"/>
+
+<form class="account_form" action="/member/bindMobile" id="mobile_form" name="mobile_form" error_type="bottom">
+    <label for=""><img src="/images/member/images/little_03.png" alt=""/>原联系电话:</label><input type="text" id="mobile" name="mobile"  data-verify="empty mobile"/><div class="send" id="btn_recom_code">获取验证码</div><br/>
+    <label for=""><img src="/images/member/images/little_03.png" alt=""/>验证码:</label><input type="text" name="recom_code" data-verify="empty recom_code"/><br/>
+    <button id="submit_btn" type="button">确认绑定</button>
+    <div class="input_error form-error-bottom display_none" id="input_error"></div>
+</form>
+<script src="/javascripts/member/account/mobile.js"></script>
+<script src="/javascripts/common/resendCaptcha.js"></script>

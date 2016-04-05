@@ -1,0 +1,55 @@
+
+    <div class="msg_box_content">
+
+        <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"> </div>
+        <!--发布公告-->
+
+
+
+    <div class="layer_title">添加图片</div>
+    <form method="post" target="pic_iframe" class="form-horizontal" error_type="bottom" action="/upload" role="form" name="add_form" id="add_form" enctype="multipart/form-data">
+        <!-- 信息总揽 -->
+        <div class="form_view">
+            <input type="hidden"  name="imgwidth" id="imgwidth">
+            <input type="hidden"  name="imgheight" id="imgheight">
+
+            <input type="hidden" id="policy" name="policy" value="">
+            <input type="hidden" id="signature" name="signature" value="">
+
+            <table  >
+                <tr>
+                    <td colspan="2" class="td_content_center">
+                        <img show_file="true" show_file_img="true" id="positive_file_pic" name="positive_file_pic" src="" width="900" style="height: 400px;width: 900px;">
+                        <br/>
+                        上传 <input type="file" data-verify="file" name="file_0" class="file" target_id="positive_file_pic" param_name="diagram_url" param_value="" >
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td_title content_word"  valign="top" >链接:
+                    </td>
+                    <td class="td_content">
+                       <input type="text" name="linkurl" id="linkurl" class="form-control td_showlong">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="td_content_center" >
+                        <p class="form-error-bottom display_none"></p>
+                        <button type="button" class="btn_save width2">提交</button><button type="button" class="btn_cancel margin-left20 width2">取消</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    </div>
+
+    <iframe id="pic_iframe" name="pic_iframe"  ></iframe>
+
+    <%- include ../popbox.ejs %>
+
+    <script src="/javascripts/admin/daity/shuffling/addimg.js"  ></script>
+
+
+
+

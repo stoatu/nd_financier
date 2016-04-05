@@ -1,0 +1,71 @@
+.detail_list {
+  width: 1180px;
+  margin: 25px auto;
+}
+.detail_list .list_tit {
+  color: #3d9fe1;
+  line-height: 36px;
+}
+.detail_list .list_tit h5 {
+  font-size: 18px;
+  display: inline-block;
+}
+.detail_list .list_tit .share_btn {
+  display: inline-block;
+  float: right;
+  height: 36px;
+  overflow: hidden;
+}
+.detail_list .list_tit .share_btn i {
+  font-size: 1.33333333rem;
+  vertical-align: top;
+}
+.detail_list .list_tit .share_btn .bdsharebuttonbox {
+  display: inline-block;
+}
+.detail_list .list_tit .share_btn .bdsharebuttonbox a {
+  margin: 10px 6px 0 0px;
+}
+.detail_list ul {
+  border: 1px solid #e1e1e1;
+  border-top: 2px solid #3d9fe1;
+  padding: 0 30px;
+}
+.detail_list ul li {
+  padding: 35px 15px;
+  border-bottom: 1px solid #e1e1e1;
+  overflow: hidden;
+}
+.detail_list ul li .title {
+  padding-bottom: 0.83333333rem;
+  overflow: hidden;
+}
+.detail_list ul li .title h4 {
+  font-size: 1.5rem;
+  color: #3d9fe1;
+  display: inline-block;
+}
+.detail_list ul li .title .right_span {
+  display: inline-block;
+  float: right;
+}
+.detail_list ul li .title .right_span span {
+  color: #999;
+  font-size: 1.16666667rem;
+  margin: 0 0.83333333rem;
+}
+.detail_list ul li .title .right_span span i {
+  color: #525252;
+}
+.detail_list ul li .title .right_span span .touch {
+  font-size: 1.5rem;
+  color: #ff3131;
+}
+.detail_list ul li p {
+  font-size: 1.16666667rem;
+  line-height: 1.66666667rem;
+  color: #696969;
+}
+.detail_list ul li:last-child {
+  border-bottom: none;
+}

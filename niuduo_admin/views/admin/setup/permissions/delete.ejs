@@ -1,0 +1,36 @@
+
+
+    <div class="msg_box_content">
+
+        <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"> </div>
+
+        <!--添加用户-->
+
+        <div class="layer_title">删除权限组</div>
+        <form class="form-horizontal" error_type="right" action="/deleteRole" role="form" name="eidt_form" id="eidt_form">
+            <!-- 信息总揽 -->
+            <div class="form_view">
+                <input type="hidden"  name="role_id" id="role_id">
+                <table  >
+                    <tr>
+                        <td colspan="2" class="td_content_center" >确定要删除吗？
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="td_content_center" >
+                            <p class="form-error-bottom display_none"></p>
+                            <button type="button" class="btn_save width1">保存</button><button type="button" class="btn_cancel width1 margin-left20">取消</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </form>
+    </div>
+    <%- include ../../popbox.ejs %>
+
+
+<script src="/javascripts/admin/setup/permissions/delete.js"  ></script>
+
+

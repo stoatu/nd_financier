@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/stylesheets/member/account/checkname.css"/>
+
+<% var account_type=cookie_info.account_type %>
+<div class="checkname">
+    <%if (account_type==0){%>
+    <span>真实姓名:</span>吉娃娃<br/>
+    <span>证件类型:</span>身份证<br/>
+    <span>证件号码:</span>65664646464646464<br/>
+    <%} else if(account_type==1){%>
+    <span>真实姓名:</span>1<br/>
+    <span>证件类型:</span>2<br/>
+    <span>证件号码:</span>3<br/>
+    <span>所在公司:</span>4<br/>
+    <span>公司地址:</span>4<br/>
+    <span>托管行:</span>4<br/>
+    <%}%>
+</div>

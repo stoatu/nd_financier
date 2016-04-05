@@ -1,0 +1,57 @@
+
+
+    <div class="msg_box_content">
+
+        <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"> </div>
+
+        <!--修改密码-->
+        <div class="layer_title">修改密码</div>
+        <form class="form-horizontal" error_type="right" action="/changePassword" role="form" name="eidt_form" id="eidt_form">
+            <!-- 信息总揽 -->
+            <div class="form_view">
+                <table  >
+                    <tr>
+                        <td class="td_title content_word" >旧密码:
+                        </td>
+
+                        <td class="td_content">
+                            <input type="password" data-verify="password" class="form-control" name="oldpassword" id="oldpassword" placeholder="原密码" data-rules="{required:true}">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_title content_word" >新密码:
+                        </td>
+
+                        <td class="td_content">
+                            <input type="password" data-verify="empty password" class="form-control" name="password" id="password" placeholder="新密码" data-rules="{required:true}">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_title content_word" >确认新密码:
+                        </td>
+
+                        <td class="td_content">
+                            <input type="password" data-verify="empty password twice" data-twice="password" class="form-control" name="password_confirm" id="password_confirm" placeholder="确认新密码" data-rules="{required:true}">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="td_content_center" >
+                            <p class="form-error-bottom display_none"></p>
+                            <button type="button"  class="btn_save width2">保存</button><button type="button" class="btn_cancel width2 margin-left20">取消</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </form>
+
+    </div>
+
+    <%- include ../../popbox.ejs %>
+    <script src="/javascripts/admin/setup/role/eidt.js"  ></script>
+
+
+

@@ -1,0 +1,35 @@
+<script src="/javascripts/admin/product/index.js"></script>
+<div>
+    <div id="top_content">
+        <label>产品名称：</label> <input id="product_name" name="product_name" type="text" placeholder="产品名称" />
+        <label>产品类型：</label>
+        <select id="type_id" name="type_id">
+            <option value="">全部</option>
+            <option value="1">私募股权</option>
+            <option value="2">阳光私募</option>
+            <option value="3">信托资管</option>
+        </select>
+        <label>状态：</label>
+        <select id="status" name="status">
+            <option value="">全部</option>
+            <option value="1">待审核</option>
+            <option value="2">审核成功</option>
+            <option value="3">进行中</option>
+            <option value="4">已结束</option>
+            <option value="5">审核失败</option>
+        </select>
+        <button type="button" id="search" name="search">查询</button>
+    </div>
+    <div id="table_content">
+        <table class="table_list" id="table" > </table>
+        <!-- 分页框 -->
+        <div class="page_control" id="page"><ul></ul></div>
+    </div>
+    <div id="verify" style="display: none;">
+        <label>原因：</label><textarea id="error_msg" name="error_msg" placeholder="请输入审核结果的原因"> </textarea>
+        <div>
+            <button type="button" id="success" >通过</button>
+            <button type="button" id="failed" >不通过</button>
+        </div>
+    </div>
+</div>

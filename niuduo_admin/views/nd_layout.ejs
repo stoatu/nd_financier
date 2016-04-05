@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><% if(typeof(title)=='undefined'|| title == "" ||title==null)  { %>牛多理财-后台运营<% } else {   %><%= title %> - 后台运营<%} %></title>
+    <!--引入样式-->
+    <link href="/stylesheets/admin/main/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/admin/admincommon.css" />
+    <link rel="stylesheet" href="/stylesheets/admin/index.css" />
+    <link rel="stylesheet" href="/stylesheets/admin/popbox.css" />
+    <link rel="stylesheet" href="/stylesheets/admin/dialog.css" />
+    <script src="/javascripts/jquery-1.11.3.min.js"></script>
+    <script src="/javascripts/common/form_check.js"></script>
+    <script src="/javascripts/common/format.js"></script>
+    <script src="/javascripts/common/grid.js"></script>
+    <script src="/javascripts/common/dialog.js"></script>
+    <script src="/javascripts/common/pop_up_box.js"></script>
+    <script src="/javascripts/common/time_util.js"></script>
+</head>
+
+
+<body>
+
+<div class="include_title_content" >
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="#">首页</a> >
+            <% var parent_id=common_info.parentid
+                if(parent_id==300){%>
+                用户管理
+            <%   }else if(parent_id==600){ %>
+                产品管理
+            <% }else if(parent_id==900){%>
+                财务管理
+           <% }else if(parent_id==10070){%>
+                系统设置
+            <% }
+            %> > <a href="#"><%=title%></a></li>
+    </ul>
+</div>
+
+
+<%- body%>
+</div>
+<script>
+    var dialog = new Dialog();
+    dialog.Init();
+</script>
+</body>
+
+</html>

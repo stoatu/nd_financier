@@ -1,0 +1,58 @@
+<%- include ../basemodule %>
+<link rel="stylesheet" href="/kindeditor-4.1.10/themes/default/default.css" />
+<link rel="stylesheet" href="/stylesheets/member/product/manage.css"/>
+<link rel="stylesheet" href="/stylesheets/member/product/publish.css">
+<div class="tab_title">
+    <span class="active"><a href="/member/article/manage">文章管理</a></span>
+    <span><a href="/member/article/addArticle">新增</a></span>
+</div>
+<div class="publish_content">
+    <form  method="post" target="pic_iframe" class="form-horizontal content_form" error_type="right" action="/member/commitArticle" role="form" name="add_form" id="add_form" enctype="multipart/form-data">
+        <input type="hidden"  name="info_id" id="info_id" value="<%=info_id%>">
+        <input type="hidden" id="policy" name="policy" value="">
+        <input type="hidden" id="signature" name="signature" value="">
+        <label><img src="/images/member/images/little_03.png" alt=""/>标题:</label>
+        <input type="text" data-verify="empty" encode="1" name="title" id="title"  data-rules="{required:true}"><br/>
+        <label><img src="/images/member/images/little_03.png" alt=""/>来源:</label>
+        <input type="text" data-verify="empty" encode="1" name="source" id="source"  data-rules="{required:true}"><br/>
+        <label class="plaintexts"><img src="/images/member/images/little_03.png" alt=""/>摘要:</label>
+     <!--   <input type="text"  width="20px" height="100px"  name='introduction' id='introduction' form_name="introduction"><br/>-->
+
+    <textare class="summary" name="introduction" id="introduction" form_name="introduction" rows="2" cols="200"></textare><br/>
+
+        <label><img src="/images/member/images/little_03.png" alt=""/>关键字:</label>
+        <input type="text" data-verify="empty" encode="1" name="key_word" id="key_word"  data-rules="{required:true}"><br/>
+        <label class="plaintexts"><img src="/images/member/images/little_03.png" alt=""/>内容:</label>
+        <textarea class="article_list" name='content' id='content' form_name="content"></textarea><br/>
+        <label><img src="/images/member/images/little_03.png" alt=""/>缩略图:</label>
+        <div class="auth_up">
+            <div class="photo_up"><img show_file="true" show_file_img="true" id="positive_file_pic" name="positive_file_pic" src=""></div>
+            <div class="up_bg"><div class="upload">点击上传</div><input type="text" encode="1" name="thumbnail" id="thumbnail" size="20"><input type="file" data-verify="file" name="file_0" class="file" target_id="positive_file_pic" param_name="diagram_url" param_value=""></div>
+        </div><br/>
+        <label><img src="/images/member/images/little_03.png" alt=""/>是否上架:</label>
+        <select id="passed" name="passed" form_name="passed">
+            <option value="0">否</option>
+            <option value="1" selected>是</option>
+        </select><br/>
+        <div class="save_add">
+            <button type="button" class="btn_submit">发布</button>
+        </div>
+    </form>
+</div>
+<iframe id="pic_iframe" name="pic_iframe"  hidden="hidden" ></iframe>
+<script>
+    var info_id="<%=info_id%>";
+</script>
+<script charset="utf-8" src="/kindeditor-4.1.10/kindeditor-min.js"></script>
+<script charset="utf-8" src="/kindeditor-4.1.10/lang/zh_CN.js"></script>
+<script src='/javascripts/common/form_check.js'></script>
+<script src="/javascripts/member/article/addArticle.js"></script>
+<script src="/javascripts/common/dialog.js"></script>
+<script src="/javascripts/common/upload/upload.js"  ></script>
+<script>
+    var sign_upyun1 = '<%= upyun_pic_1.sign %>';
+    var policy_upyun1 = '<%= upyun_pic_1.policy %>';
+    var picpath1 = '<%= upyun_pic_1.picpath %>';
+    var prefix_upyun = '<%= upyun_pic_1.prefix_upyun %>';
+</script>
+</div></div></div>

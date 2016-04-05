@@ -1,0 +1,13 @@
+.checkname {
+  font-size: 14px;
+  color: #424242;
+  line-height: 34px;
+  padding: 10px 0;
+}
+.checkname span {
+  display: inline-block;
+  width: 115px;
+  padding-right: 10px;
+  text-align: right;
+  color: #7f7f7f;
+}

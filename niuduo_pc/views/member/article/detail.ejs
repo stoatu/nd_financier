@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/stylesheets/member/article/detail.css"/>
+
+
+
+<div class="selected_details">
+    <div class="details_content">
+        <div class="title">
+            <h4><%=msg_info.title%></h4>
+            <span>发布人：<i><%=msg_info.publisher%></i></span>
+            <span>时间：<i><%=msg_info.createtime%></i></span>
+            <span>来源：<i><%=msg_info.source%></i></span>
+            <span>点击量：<i class="touch"><%=msg_info.clicknum%></i></span>
+            <span class="comm_de"></span>
+        </div>
+        <div class="article">
+            <%- msg_info.content%>
+        </div>
+    </div>
+</div>

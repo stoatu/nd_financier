@@ -1,0 +1,102 @@
+
+
+    <div class="msg_box_content">
+
+        <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"> </div>
+        <!--添加用户-->
+
+    <div class="layer_title">添加用户</div>
+    <form method="post" class="form-horizontal"   target="pic_iframe" error_type="right" action="/adminCreate" role="form" name="add_form" id="add_form" enctype="multipart/form-data">
+        <!-- 信息总揽 -->
+        <input type="hidden" id="policy" name="policy" value="">
+        <input type="hidden" id="signature" name="signature" value="">
+
+        <div class="form_view">
+            <table  >
+                <tr>
+                    <td class="td_title content_word" >帐号:
+                    </td>
+
+                    <td class="td_content">
+                        <input type="text" data-verify="empty" encode="1" class="form-control" name="login_name" id="login_name" placeholder="帐号" data-rules="{required:true}">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td_title content_word" >姓名:
+                    </td>
+
+                    <td class="td_content">
+                        <input type="text" data-verify="empty real_name" encode="1" class="form-control" name="real_name" id="real_name" placeholder="姓名" data-rules="{required:true}">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td_title content_word" >密码:
+                    </td>
+
+                    <td class="td_content">
+                        <input type="password" data-verify="empty password" data-twice="password" class="form-control" name="password" id="password" placeholder="密码" data-rules="{required:true}">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td_title content_word" >重复密码:
+                    </td>
+
+                    <td class="td_content">
+                        <input type="password" data-verify="empty password twice" data-twice="password" class="form-control" name="password_confirm" id="password_confirm" placeholder="确认新密码" data-rules="{required:true}">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_title content_word" >手机:
+                    </td>
+
+                    <td class="td_content">
+                        <input type="text" data-verify="empty mobile"  class="form-control" name="mobile" id="mobile" placeholder="手机号" data-rules="{required:true}">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_title content_word" >账户昵称:
+                    </td>
+
+                    <td class="td_content">
+                        <input type="text" data-verify="empty nick_name"class="form-control" name="nick_name" id="login_name" placeholder="昵称" data-rules="{required:true}">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_title content_word" >头像:</td>
+                    <td class="td_content">
+                        <img show_file="true" show_file_img="true" id="positive_file_pic" name="positive_file_pic" src="" style="width: 40px; height:40px">
+                        <br/>
+                        <input type="text" readonly="readonly"  encode="1" class="form-control" name="thumbnail" id="thumbnail" size="20">
+                        <input type="file" data-verify="file" name="file_0" class="file" target_id="positive_file_pic" param_name="diagram_url" param_value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_title content_word" >权限组:
+                    </td>
+
+                    <td class="td_content">
+                        <select id="role" name="role" class="form-control" form_name="role"></select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="td_content_center" >
+                        <p class="form-error-bottom display_none"></p>
+                        <button type="button" class="btn_save width2">保存</button><button type="button" class="btn_cancel width2 margin-left20">取消</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </form>
+    </div>
+    <iframe id="pic_iframe" name="pic_iframe"  ></iframe>
+    <%- include ../../popbox.ejs %>
+
+
+    <script src="/javascripts/admin/setup/personal/adduser.js"  ></script>
+    <script src="/javascripts/common/select_grid.js"  ></script>
+

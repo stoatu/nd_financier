@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/stylesheets/member/account/index.css"/>
+
+<%- include ../basemodule %>
+
+<ul class="content_list" id="content_list">
+    <li>
+        <div class="list_tit">
+            <span>用户名：<i><%=cookie_info.login_name%></i></span>
+            <span><b data-ifsrc="/member/account/password">修改登录密码</b></span>
+        </div>
+    </li>
+    <li>
+        <div class="list_tit">
+            <span>手机号：<i><% if(datainfo.mobile!=null){%><%=datainfo.mobile%><%}else{%>未绑定<%}%></i></span>
+            <span><% if(datainfo.mobile==null || datainfo.mobile==""){%><b data-ifsrc="/member/account/mobile">绑定</b><%}%><i>（手机号可用登录名，绑定后可便于找回密码）</i></span>
+        </div>
+    </li>
+    <li>
+        <div class="list_tit">
+            <span>真实姓名：<i><%=datainfo.realName%>  |  <%=datainfo.idcardNo%> </i></span>
+            <span><b class="red_focus" data-ifsrc="/member/account/checkname">查看</b></span>
+            <!--<b class="red_focus" data-ifsrc="/member/account/nameauth">实名认证</b>-->
+        </div>
+    </li>
+    <li>
+        <div class="list_tit">
+            <span>邮箱：<i><% if(datainfo.email!=null){%><%=datainfo.email%><%}else{%>未绑定<%}%></i></span>
+            <span><b class="red_focus" data-ifsrc="/member/account/email">邮箱绑定</b></span>
+        </div>
+    </li>
+    <li>
+        <div class="list_tit">
+            <span>昵称：<i>募金使者</i></span>
+            <span><b data-ifsrc="/member/account/nickname">昵称、头像修改</b></span>
+        </div>
+    </li>
+    <li>
+        <div class="list_tit">
+            <span>注册时间：<i><%=datainfo.createdDate%></i></span>
+            <span></span>
+        </div>
+    </li>
+</ul>
+
+
+<script src="/javascripts/member/account/index.js"></script>
+
+
+
+</div>
+</div>
+</div>
+<!--<script src="/javascripts/common/dialog.js"></script>
+<script type="application/javascript">
+    var dialog=new Dialog();
+    dialog.Init();
+</script>-->
+
+
+

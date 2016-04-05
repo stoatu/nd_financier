@@ -1,0 +1,160 @@
+<link rel="stylesheet" href="/stylesheets/member/account/password.css"/>
+<link rel="stylesheet" href="/stylesheets/member/account/nameauth.css"/>
+
+<% var account_type=cookie_info.account_type%>
+<div class="account_form" id="account_form">
+    <div class="nameauth">
+        <%if(account_type==0){%>
+            <button type="button">个人用户认证</button>
+            <button type="button" class="active">企业用户认证</button>
+        <%}else if(account_type==1){%>
+            <button type="button" class="active">个人用户认证</button>
+            <button type="button">企业用户认证</button>
+        <%}%>
+    </div>
+    <%if(account_type==0){%>
+        <form target="pic_iframe" method="post" action="/member/authRealname" id="auth_form" name="auth_form" error_type="bottom" enctype="multipart/form-data">
+            <input type="hidden" id="policy" name="policy" value="">
+            <input type="hidden" id="signature" name="signature" value="">
+            <input type="hidden" id="timept" name="timept" value="">
+            <div class="personal_auth form_auth">
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>真实姓名:</label><input type="text" name="real_name" data-verify="empty real_name"/><br/>
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>证件类型:</label>
+                <select name="card_type">
+                    <option value="0">身份证</option>
+                </select><br/>
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>证件号码:</label><input type="text" name="idcard_no" data-verify="empty id_no"/><br/><!--id_no-->
+                <div class="load_box">
+                    <label for=""><img src="/images/member/images/little_03.png" alt=""/>证件照片:</label>
+                    <div class="auth_up">
+                        <div class="photo_up"><img show_file="true" show_file_img="true" id="positive_file_pic" name="positive_file_pic" alt="证件正面照"/></div>
+                        <div class="upload">
+                            <input type="file" data-verify="file" name="file_0" style="opacity: 0;" id="positive_file_pic_file"  target_id="positive_file_pic" param_name="positive_file_pic" param_value=" "/>
+                            照片上传
+                        </div>
+                    </div>
+                    <div class="auth_up">
+                        <div class="photo_up"><img show_file="true" show_file_img="true" id="negative_file_pic" name="negative_file_pic" alt="证件反面照"/></div>
+                        <div class="upload">
+                            <input type="file" data-verify="file" name="file_0" style="opacity: 0;"  id="negative_file_pic_file" target_id="negative_file_pic"  param_name="negative_file_pic" param_value=" "/>
+                            照片上传
+                        </div>
+                    </div>
+                    <div class="auth_up">
+                        <p>证件必须是清晰彩色原件电子版可以是扫描件或者数码拍摄照片不可是复印件。</p>
+                    </div>
+                </div>
+                <button type="button" id="submit_btn">确认保存</button>
+                <div class="input_error form-error-bottom display_none" id="input_error"></div>
+            </div>
+        </form>
+    <%}else if(account_type==1){%>
+        <form target="pic_iframe" method="post" action="/member/authEnterpriseRealname" id="auth_form" name="auth_form" enctype="multipart/form-data">
+            <input type="hidden" id="policy" name="policy" value="">
+            <input type="hidden" id="signature" name="signature" value="">
+            <input type="hidden" id="timept" name="timept" value="">
+            <div class="company_auth form_auth" style="display:block">
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>真实姓名:</label><input type="text" name="real_name" data-verify="empty real_name"/><br/>
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>证件类型:</label>
+                <select name="card_type">
+                    <option value="0">身份证</option>
+                </select><br/>
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>证件号码:</label><input type="text"  name="idcard_no" data-verify="empty"/><br/><!--id_no-->
+                <div class="load_box">
+                    <label for=""><img src="/images/member/images/little_03.png" alt=""/>证件照片:</label>
+                    <div class="auth_up">
+                        <div class="photo_up"><img show_file="true" show_file_img="true" id="positive_file_pic" name="positive_file_pic" alt="证件正面照"/></div>
+                        <div class="upload">
+                            <input type="file" data-verify="file" name="file_0" style="opacity: 0;" id="positive_file_pic_file"  target_id="positive_file_pic" param_name="positive_file_pic" param_value=" "/>
+                            照片上传
+                        </div>
+                    </div>
+                    <div class="auth_up">
+                        <div class="photo_up"><img show_file="true" show_file_img="true" id="negative_file_pic" name="negative_file_pic" alt="证件反面照"/></div>
+                        <div class="upload">
+                            <input type="file" data-verify="file" name="file_0" style="opacity: 0;"  id="negative_file_pic_file" target_id="negative_file_pic"  param_name="negative_file_pic" param_value=" "/>
+                            照片上传
+                        </div>
+                    </div>
+                    <div class="auth_up">
+                        <p>证件必须是清晰彩色原件电子版可以是扫描件或者数码拍摄照片不可是复印件。</p>
+                    </div>
+               </div>
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>所在公司:</label><input type="text" name="cp_name"/><br/>
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>公司地址:</label><input type="text" name="cp_address"/><br/>
+               <!-- <label for=""><img src="/images/member/images/little_03.png" alt=""/>资格证种类:</label>
+                <select>
+                    <option value="">&#45;&#45;请选择&#45;&#45;</option>
+                    <option value="">身份证</option>
+                    <option value="">身份证</option>
+                </select><br/>
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>所在岗位:</label>
+                <select>
+                    <option value="">&#45;&#45;请先选择资格证种类&#45;&#45;</option>
+                    <option value="">身份证</option>
+                    <option value="">身份证</option>
+              </select><br/>
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>资格证号:</label><input type="text"/><br/>
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>所在省市:</label>
+                <select class="address">
+                    <option value="">&#45;&#45;请选择所在省份&#45;&#45;</option>
+                    <option value="">身份证</option>
+                    <option value="">身份证</option>
+                </select>
+                <select class="address">
+                    <option value="">&#45;&#45;请选择所在地市&#45;&#45;</option>
+                    <option value="">身份证</option>
+                    <option value="">身份证</option>
+                </select><br/>
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>公司性质:</label><input type="text"/><br/>-->
+                <div class="load_box">
+                    <label for=""><img src="/images/member/images/little_03.png" alt=""/>营业执照:</label>
+                    <div class="auth_up">
+                        <div class="photo_up"><img show_file="true" show_file_img="true" id="license_file_pic" name="license_file_pic" alt="营业执照证件"/></div>
+                        <div class="upload">
+                            <input type="file" data-verify="file" name="file_0" style="opacity: 0;" id="license_file_pic_file"  target_id="license_file_pic" param_name="license" param_value=" "/>
+                            照片上传
+                        </div>
+                    </div>
+                </div>
+                <label for=""><img src="/images/member/images/little_03.png" alt=""/>托管行:</label><input type="text" name="proxy_bank"/><br/>
+                <div class="load_box">
+                    <label for=""><img src="/images/member/images/little_03.png" alt=""/>合同扫描件:</label>
+                    <div class="auth_up">
+                        <div class="photo_up"><img show_file="true" show_file_img="true" id="proxy_file_pic" name="proxy_file_pic" alt="合同扫描件"/></div>
+                        <div class="upload">
+                            <input type="file" data-verify="file" name="file_0" style="opacity: 0;" id="proxy_file_pic_file"  target_id="proxy_file_pic" param_name="proxy_protocol" param_value=" "/>
+                            照片上传
+                        </div>
+                    </div>
+                </div>
+               <!-- <label for=""><img src="/images/member/images/little_03.png" alt=""/>个人擅长:</label><input class="personalskill" type="text"/><input class="personalskill" type="text"/><input class="personalskill" type="text"/><input class="personalskill" type="text"/><br/>
+                <label class="plaintexts" for=""><img src="/images/member/images/little_03.png" alt=""/>个人简介:</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>-->
+                <button type="button" id="submit_btn">确认保存</button>
+            </div>
+        </form>
+    <%}%>
+</div>
+<iframe id="pic_iframe" name="pic_iframe" style="display: none"></iframe>
+
+<script type="application/javascript">
+    var account_type="<%=cookie_info.account_type%>";
+</script>
+<script language="JavaScript">
+    var sign_upyun1 = '<%= upyun_pic_1.sign %>';
+    var policy_upyun1 = '<%= upyun_pic_1.policy %>';
+    var picpath1 = '<%= upyun_pic_1.picpath %>';
+    var sign_upyun2 = '<%= upyun_pic_2.sign %>';
+    var policy_upyun2 = '<%= upyun_pic_2.policy %>';
+    var picpath2 = '<%= upyun_pic_2.picpath %>';
+    var sign_upyun3 = '<%= upyun_pic_3.sign %>';
+    var policy_upyun3 = '<%= upyun_pic_3.policy %>';
+    var picpath3 = '<%= upyun_pic_3.picpath %>';
+    var sign_upyun4 = '<%= upyun_pic_4.sign %>';
+    var policy_upyun4 = '<%= upyun_pic_4.policy %>';
+    var picpath4 = '<%= upyun_pic_4.picpath %>';
+
+    var prefix_upyun = '<%= upyun_pic_1.prefix_upyun %>';
+</script>
+<script src="/javascripts/member/account/nameauth.js"></script>

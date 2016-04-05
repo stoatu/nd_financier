@@ -1,0 +1,58 @@
+
+<div class="msg_box_content">
+
+        <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"> </div>
+
+        <!--修改公告-->
+
+    <div class="layer_title">修改公告</div>
+    <form class="form-horizontal" error_type="right" action="/editAnnouncement" role="form" name="add_form" id="add_form">
+        <!-- 信息总揽 -->
+        <div class="form_view">
+            <input type="hidden"  name="infoAnnouncementId" id="infoAnnouncementId">
+            <input type="hidden"  name="top_flag" id="top_flag">
+            <table  >
+                <tr>
+                    <td class="td_title content_word" >标题:
+                    </td>
+
+                    <td class="td_content">
+                        <input type="text" encode="1" data-verify="empty" encode="1" class="form-control td_showlong" name="title" id="title"  data-rules="{required:true}">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td_title content_word"  valign="top" >内容:
+                    </td>
+
+                    <td class="td_content">
+                        <textarea encode="1" data-verify="empty"  class="form-area td_showlong" encode="1" name="content" id="content" form_name="content" rows="15"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_title content_word" >上架设置:
+                    </td>
+                    <td class="td_content">
+                        <select id="passed" name="passed"  class="form-control td_short" form_name="passed">
+                            <option value="1">是</option>
+                            <option value="0">否</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="td_content_center" >
+                        <p class="form-error-bottom display_none"></p>
+                        <button type="button" class="btn_submits width2">提交</button><button type="button" class="btn_cancel margin-left20 width2">取消</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </form>
+    </div>
+
+    <%- include ../popbox.ejs %>
+
+
+    <script src="/javascripts/admin/daity/announcement/edit.js"  ></script>
+

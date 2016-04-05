@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="/kindeditor-4.1.10/themes/default/default.css" />
+<!--<script charset="utf-8" src="/kindeditor-4.1.10/kindeditor-min.js"></script>-->
+<script charset="utf-8" src="/kindeditor-4.1.10/kindeditor.js"></script>
+<script charset="utf-8" src="/kindeditor-4.1.10/lang/zh_CN.js"></script>
+<script>
+    var editor;
+    KindEditor.ready(function(K) {
+        editor = K.create('textarea[name="content"]', {
+            allowFileManager : true
+        });
+        K('input[name=getHtml]').click(function(e) {
+            alert(editor.html());
+        });
+        K('input[name=isEmpty]').click(function(e) {
+            alert(editor.isEmpty());
+        });
+        K('input[name=getText]').click(function(e) {
+            alert(editor.text());
+        });
+        K('input[name=selectedHtml]').click(function(e) {
+            alert(editor.selectedHtml());
+        });
+        K('input[name=setHtml]').click(function(e) {
+            editor.html('<h3>Hello KindEditor</h3>');
+        });
+        K('input[name=setText]').click(function(e) {
+            editor.text('<h3>Hello KindEditor</h3>');
+        });
+        K('input[name=insertHtml]').click(function(e) {
+            editor.insertHtml('<strong>插入HTML</strong>');
+        });
+        K('input[name=appendHtml]').click(function(e) {
+            editor.appendHtml('<strong>添加HTML</strong>');
+        });
+        K('input[name=clear]').click(function(e) {
+            editor.html('');
+        });
+    });
+</script>
+<div class="msg_box_content">
+    <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"> </div>
+    <!--发布公告-->
+    <div class="layer_title">发布信息</div>
+    <form method="post" class="form-horizontal" target="pic_iframe" error_type="right" action="/releasestaticfile" role="form" name="add_form" id="add_form" enctype="multipart/form-data">
+        <!-- 信息总揽 -->
+        <div class="form_view">
+            <input type="hidden"name="staticfileid" id="staticfileid" >
+
+            <input type="hidden"name="top_flag" id="top_flag" >
+            <input type="hidden" id="policy" name="policy" value="">
+            <input type="hidden" id="signature" name="signature" value="">
+            <table>
+
+                <tr>
+                    <td class="td_title content_word" >所属分类:</td>
+                    <td class="td_content">
+                        <select name="catname" id="catname">
+                            <option value="策略">策略</option>
+                            <option value="理财">理财</option>
+                            <option value="会员相关">会员相关</option>
+                            <option value="充值提现">充值提现</option>
+                            <option value="服务协议">服务协议</option>
+                            <option value="关于我们">关于我们</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td_title content_word" >标题:</td>
+                    <td class="td_content">
+                        <input type="text" data-verify="empty" encode="1" class="form-control" name="title" id="title"  data-rules="{required:true}">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td_title content_word" >内容:</td>
+                    <td class="td_content">
+                        <textarea name='content' id='content' style='width:98%;height:156px;' form_name="content"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="td_content_center" >
+                        <p class="form-error-bottom display_none"></p>
+                        <button type="button" class="btn_save margin-left20 width2">提交</button><button type="button" class="btn_cancel margin-left20 width2">取消</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+
+
+
+<%- include ../popbox.ejs %>
+<script src="/javascripts/admin/daity/staticfile/release.js"  ></script>

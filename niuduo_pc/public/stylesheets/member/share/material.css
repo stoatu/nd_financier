@@ -1,0 +1,49 @@
+.message_list .tab_title {
+  line-height: 32px;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px 0;
+}
+.message_list .tab_title span {
+  background: #4a7dca;
+  padding: 0 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+}
+.message_list .tab_title span:nth-child(2) {
+  margin-left: 14px;
+}
+.message_list .tab_title .active {
+  background: #cccccc;
+}
+.message_list .query_table {
+  text-align: center;
+}
+.message_list .query_table iframe {
+  width: 90%;
+  height: 350px;
+  border: 1px solid #040404;
+}
+.message_list .btn_box {
+  text-align: center;
+  padding: 20px 0;
+}
+.message_list .btn_box input {
+  width: 50px;
+  height: 30px;
+  background: #4a7dca;
+  border: none;
+  color: #fff;
+  text-indent: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.message_list .btn_box input:last-child {
+  margin-left: 20px;
+  background: #ccc;
+}

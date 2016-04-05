@@ -1,0 +1,37 @@
+<!--配置权限组-->
+<div class="msg_box_content">
+    <div class="fork"><img src="<%= common_info.img_prefix %>/images/admin/login/close.png"></div>
+    <!--配置权限组-->
+        <div class="layer_title white">设置是否上架</div>
+        <form class="form-horizontal" error_type="right" action="/editAnnouncement" role="form" name="eidt_form" id="eidt_form">
+            <!-- 信息总揽 -->
+            <div class="form_view">
+                <input type="hidden"  name="infoAnnouncementId" id="infoAnnouncementId" >
+                <input type="hidden"  name="title" id="title" >
+                <input type="hidden"  name="content" id="content" >
+                <table  >
+                    <tr>
+                        <td class="td_title content_word" >上架设置:
+                        </td>
+                        <td class="td_content">
+                            <select id="passed" name="passed"  class="form-control td_short" form_name="passed">
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="td_content_center" >
+                            <p class="form-error-bottom display_none"></p>
+                            <button type="button" class="btn_save width2">保存</button><button type="button" class="btn_cancel width2 margin-left20">取消</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </form>
+</div>
+<%- include ../popbox.ejs %>
+
+<script src="/javascripts/admin/daity/announcement/setpassed.js"  ></script>
+<script src="/javascripts/common/select_grid.js"  ></script>

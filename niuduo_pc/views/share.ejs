@@ -1,0 +1,28 @@
+<script>
+    var avatar_url  = '<%= cookie_info.portrait %>';
+
+    var default_url = 'http://resource-chaogu.b0.upaiyun.com/avatar/avatar.jpg';
+
+    //alert(avatar_url);
+
+    if(avatar_url == "" || avatar_url == "null" || typeof(avatar_url) == "undefined")
+        avatar_url = default_url;
+    else
+        avatar_url = avatar_url +"!avatar.square";
+
+    // avatar_url = default_url;
+
+    // alert(avatar);
+
+    var sign_upyun = '<%= common_info.avatar_upyun.sign %>';
+    var bucket_upyun = '<%= common_info.avatar_upyun.bucket %>';
+    var policy_upyun = '<%= common_info.avatar_upyun.policy %>';
+
+    var prefix_upyun_avatar = '<%= common_info.avatar_upyun.prefix_upyun %>';
+
+
+
+    //alert(prefix_upyun);
+    //    alert(bucket_upyun);
+    //    alert(policy_upyun);
+</script>

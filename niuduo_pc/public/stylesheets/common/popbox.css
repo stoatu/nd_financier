@@ -1,0 +1,271 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.form_view{
+    padding-top: 87px;
+    padding-bottom: 20px;
+}
+
+.form_view table {
+    width: 100%;
+    border: 0px solid #eeeeee;
+    border-collapse:collapse;
+}
+
+.form_view .td_title {
+
+    width: 120px;
+    border: 0px solid #eeeeee;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 60px;
+    height:60px;
+}
+.form_view .td_content {
+
+    border: 0px solid #eeeeee;
+    text-align: left;
+    padding-left: 10px;
+
+    line-height: 60px;
+    height:60px;
+}
+
+.form_view .td_content_center{
+    border: 0px solid #eeeeee;
+    text-align: center;
+    height:90px;
+}
+
+.form_view .td_content_center img{
+    width: 1000px;
+}
+
+.form_view .from_img{
+    width: 100%;
+}
+.form_view .td_div_pic{
+    width: 188px;
+    margin: 5px;
+}
+.form_view .td_div_pic1{
+    position:fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 11;
+    vertical-align: middle;
+}
+
+.form_view .from_img1{
+    width: 100%;
+    transition:width 2s, height 2s;
+    -moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+    -webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+    -o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+}
+.form_view .td_showlong
+{
+    width: 700px;
+}
+.form_view .td_long{
+    width: 300px;
+}
+
+.form_view .td_half{
+    width: 86px;
+}
+.form_view .td_short{
+    width: 200px;
+}
+.form-area{
+    border-radius: 4px;
+    padding: 4px 12px;
+}
+.form_view .margin-left20{
+    margin-left: 20px;
+}
+.form_view .width1{
+    width: 100px;
+}
+.form_view .width2{
+    width: 90px;
+}
+.form_view .select{
+    width: 188px;
+    height: 32px;
+}
+
+.form_view .btn_submits {
+    background-color: #ff4445;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 3px;
+    border: 0px;
+}
+.form_view .btn_save {
+    background-color: #ff6600;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 3px;
+    border: 0px;
+}
+
+.form_view .btn_cancel {
+    background-color: #fff;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #797979;
+}
+
+.form_view .btn_deal_save {
+    background-color: #ff6600;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 3px;
+    border: 0px;
+}
+.form_view .btn_deal_cancel {
+    background-color: #fff;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #797979;
+}
+
+.layer_title{
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #e7e7e7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: 10;
+}
+/*input[type=text],input[password]{
+    border-radius:4px;
+    padding:4px 12px;
+    height: 20px;
+}*/
+input[type=text]:focus{
+    border-color:#66afe9;
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+.form-control{
+    border: 1px solid #cbcbcb;
+    border-radius:4px;
+    padding:4px 12px;
+    height: 32px;
+}
+
+/* 弹出框 */
+#popbox_main {
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0,0,0,0.6);
+    top: 0px;
+
+}
+
+#popbox_main iframe {
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: 0px;
+    margin: auto;
+    position: relative;
+    margin-top: 100px;
+}
+
+.msg_box_content {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    /*border-radius: 5px;*/
+   /* min-height: 660px;*/
+   /* max-height: 500px;*/
+   /* overflow:hidden;*/
+
+}
+
+#popbox_main .iframe_main {
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+.error_msg{
+    color: #ff0000;
+    font-size: 14px;
+}
+
+.fork{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    z-index: 15;
+}
+.fork img{
+    width: 20px;
+    height: 20px;
+}
+.form-error-bottom{
+    margin-bottom: 10px;
+    color: #ff0000;
+}
+.font_size_18{
+    font-size: 18px;
+}
+
+.from_deal{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background: #ffffff;
+}
+.box_table{
+    padding: 20px;
+}
+#pic_iframe{
+    height: 0px;
+    width: 98%;
+    visibility: hidden;
+}
+
+textarea{
+    margin-bottom: 12px;
+}
+

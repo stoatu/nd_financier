@@ -1,0 +1,24 @@
+<script type="application/javascript" src="/javascripts/main/regist.js"></script>
+<link rel="stylesheet" href="/stylesheets/main/regist.css"/>
+<form action="/register" class="regist_form" name="regist_form" id="regist_form">
+    <ul>
+        <li><label for="name">用户名</label><input id="uname" name="uname"  type="text"/></li>
+        <li><label for="pwd">密码</label><input id="password" name="password" type="password"/></li>
+        <li><label for="repwd">确认密码</label><input id="repwd" type="password" name="confirmpassword"/></li>
+        <li>
+            <label for="type">用户类型</label>
+            <select name="account_type" id="account_type">
+                <option value="0" selected>个人用户</option>
+                <option value="1">企业用户</option>
+            </select>
+            <span></span>
+        </li>
+        <!--<li>
+            <label for="">验证码：</label>
+            <div class="checkout">
+                <img src="/images/main/images/regist_03.png" alt="验证码"/>
+            </div>
+        </li>-->
+        <li><button id="submit_btn" type="button">立即注册</button></li>
+    </ul>
+</form>
